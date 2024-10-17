@@ -9,7 +9,7 @@ android {
         applicationId "pl.signalo.openboard"
         minSdkVersion 26
         targetSdkVersion 31
-        versionCode 21
+        versionCode 22
         versionName '1.4.5'
     }
 
