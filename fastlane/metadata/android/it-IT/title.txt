@@ -1,1 +1,1 @@
-OpenBoard
+SignaloBoard

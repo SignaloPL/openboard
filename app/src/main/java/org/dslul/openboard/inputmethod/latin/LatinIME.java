@@ -1602,16 +1602,17 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         if (!onEvaluateInputViewShown()) {
             return;
         }
-
-        final boolean shouldShowSuggestionCandidates =
-                currentSettingsValues.mInputAttributes.mShouldShowSuggestions
-                        && currentSettingsValues.isSuggestionsEnabledPerUserSettings();
-        final boolean shouldShowSuggestionsStripUnlessPassword = currentSettingsValues.mShowsVoiceInputKey
-                || currentSettingsValues.mShowsClipboardKey
-                || shouldShowSuggestionCandidates
-                || currentSettingsValues.isApplicationSpecifiedCompletionsOn();
-        final boolean shouldShowSuggestionsStrip = shouldShowSuggestionsStripUnlessPassword
-                && (!currentSettingsValues.mInputAttributes.mIsPasswordField || currentSettingsValues.mShowsClipboardKey);
+        // We don't want suggestion strip at all
+//        final boolean shouldShowSuggestionCandidates =
+//                currentSettingsValues.mInputAttributes.mShouldShowSuggestions
+//                        && currentSettingsValues.isSuggestionsEnabledPerUserSettings();
+//        final boolean shouldShowSuggestionsStripUnlessPassword = currentSettingsValues.mShowsVoiceInputKey
+//                || currentSettingsValues.mShowsClipboardKey
+//                || shouldShowSuggestionCandidates
+//                || currentSettingsValues.isApplicationSpecifiedCompletionsOn();
+//        final boolean shouldShowSuggestionsStrip = shouldShowSuggestionsStripUnlessPassword
+//                && (!currentSettingsValues.mInputAttributes.mIsPasswordField || currentSettingsValues.mShowsClipboardKey);
+        final boolean shouldShowSuggestionsStrip = false;
         mSuggestionStripView.updateVisibility(shouldShowSuggestionsStrip, isFullscreenMode());
         if (!shouldShowSuggestionsStrip) {
             return;
